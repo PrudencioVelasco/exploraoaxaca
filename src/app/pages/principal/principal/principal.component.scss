@@ -1,0 +1,139 @@
+ .product-item-content {
+      //  border: 1px solid var(--surface-d);
+        border-radius: 3px;
+       // margin: .3rem; 
+        margin: 10px;
+    }
+ 
+  .sliderprincipal-item-content {
+    //  border: 1px solid var(--surface-d);
+      border-radius: 3px;
+     // margin: .3rem;
+      text-align: center; 
+      margin: 10px;
+  }
+
+  .sliderprincipal-image {
+      width: 50%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  }
+
+
+ /* Container holding the image and the text */
+ .sliderprincipal-item-content {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } 
+  .titulo {
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+ color: black;
+}
+.subrayado-hover{
+    text-decoration: none;
+}
+
+
+.imagebox {
+    background: black;
+    padding: 0px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .imagebox img {
+    opacity: 1;
+    transition: 0.5s opacity;
+  }
+  
+  .imagebox .imagebox-desc {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0px;
+    color: white;
+    font-size: 1.2em;
+    left: 0px;
+    padding: 10px 15px;
+    position: absolute;
+    transition: 0.5s padding;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .imagebox:hover img {
+    opacity: 0.7;
+  }
+  
+  .imagebox:hover .imagebox-desc {
+    padding-bottom: 10%;
+  }
+  
+
+  .list-wrapper {
+    padding: 18px;
+    ul {
+        padding: 10px;
+        li {
+            list-style: none;
+            .item-wrap {
+                display: flex;
+                box-shadow: 0px 2px 2px 2px #d8d8d8;
+                padding: 10px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                .item-img {
+                    min-width: 120px;
+                    min-height: 120px;
+                    align-self: center;
+                    img {
+                        border-radius: 100px;
+                    }
+                }
+                .item-content {
+                    padding: 10px;
+                    width: calc(100% - 130px);
+                    label {
+                        font-weight: bold;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+}

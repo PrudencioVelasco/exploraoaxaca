@@ -1,0 +1,205 @@
+ <div class="row">
+   <!-- Column -->
+   <div class="col-lg-3 col-md-6">
+     <a href="" class="subrayado-hover">
+       <div class="card" style="border: solid #ccc 1px;">
+         <div class="d-flex flex-row">
+           <div class="p-10 bg-info">
+             <h3 class="text-white box m-b-0"><i class="ti-wallet"></i></h3>
+           </div>
+           <div class="align-self-center m-l-20">
+             <h4 class="m-b-0 text-info">Cosas que hacer</h4>
+           </div>
+         </div>
+       </div>
+     </a>
+   </div>
+   <!-- Column -->
+   <!-- Column -->
+   <div class="col-lg-3 col-md-6">
+     <a href="" class="subrayado-hover">
+       <div class="card" style="border: solid #ccc 1px;">
+         <div class="d-flex flex-row">
+           <div class="p-10 bg-success">
+             <h3 class="text-white box m-b-0"><i class="ti-wallet"></i></h3>
+           </div>
+           <div class="align-self-center m-l-20">
+             <h4 class="m-b-0 text-success">Agencia de viajes</h4>
+           </div>
+         </div>
+       </div>
+     </a>
+   </div>
+   <!-- Column -->
+   <!-- Column -->
+   <div class="col-lg-3 col-md-6">
+     <a href="" class="subrayado-hover">
+       <div class="card" style="border: solid #ccc 1px;">
+         <div class="d-flex flex-row">
+           <div class="p-10 bg-inverse">
+             <h3 class="text-white box m-b-0"><i class="icon-directions"></i></h3>
+           </div>
+           <div class="align-self-center m-l-20">
+             <h4 class="m-b-0">Tours</h4>
+           </div>
+         </div>
+       </div>
+     </a>
+   </div>
+   <!-- Column -->
+   <!-- Column -->
+   <div class="col-lg-3 col-md-6">
+     <a href="" class="subrayado-hover">
+       <div class="card" style="border: solid #ccc 1px;">
+         <div class="d-flex flex-row">
+           <div class="p-10 bg-primary">
+             <h3 class="text-white box m-b-0"><i class="fa fa fa-shopping-basket"></i></h3>
+           </div>
+           <div class="align-self-center m-l-20">
+             <h4 class="m-b-0 text-primary">Tiendas</h4>
+           </div>
+         </div>
+       </div>
+     </a>
+     <!-- Column -->
+   </div>
+   <hr>
+
+
+
+
+
+   <div class="row" style="background-color: #eae7e7;">
+     <p-carousel [value]="slidersprincipal" *ngIf="!cargando_principal" [numVisible]="3" [numScroll]="3" [showIndicators]="false" [circular]="false"
+       [responsiveOptions]="responsiveOptions">
+
+       <ng-template let-sliderprincipal pTemplate="item">
+
+         <div class="sliderprincipal-item-content">
+           <div class="imagebox">
+             <a [routerLink]="['./detallelugar/',sliderprincipal.idlugar]">
+                <img [defaultImage]="defaultImage" [lazyLoad]="sliderprincipal.primeraimagen" class="category-banner img-responsive"  style="height: 300px;" />
+               <span class="imagebox-desc">
+                 <h3 style="color: white;">{{sliderprincipal.nombre}}</h3>
+               </span>
+             </a>
+           </div>
+         </div>
+       </ng-template>
+     </p-carousel>
+   </div>
+ </div>
+
+ <div class="card" *ngIf="cargando_principal">
+   <div class="grid formgrid">
+     <div class="row">
+     <div class="field col-4 md:col-6 md:pr-6 pr-0">
+       <div class="custom-skeleton p-4">
+
+         <p-skeleton width="100%" height="150px"></p-skeleton>
+         <div class="flex mb-3">
+           <div>
+             <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
+             <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
+             <p-skeleton height=".5rem"></p-skeleton>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="field col-4 md:col-6 md:pr-6 pr-0">
+       <div class="custom-skeleton p-4">
+
+         <p-skeleton width="100%" height="150px"></p-skeleton>
+         <div class="flex mb-3">
+           <div>
+             <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
+             <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
+             <p-skeleton height=".5rem"></p-skeleton>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="field col-4 md:col-6 md:pr-6 pr-0">
+       <div class="custom-skeleton p-4">
+
+         <p-skeleton width="100%" height="150px"></p-skeleton>
+         <div class="flex mb-3">
+           <div>
+             <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
+             <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
+             <p-skeleton height=".5rem"></p-skeleton>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+   </div>
+ </div>
+ <br>
+ <div class="container">
+   <h3><strong>Lugares mas Populares</strong></h3>
+   <div class="row">
+
+     <p-carousel [value]="sliderspopulares" [numVisible]="3" [numScroll]="3" [circular]="false"
+       [responsiveOptions]="responsiveOptions">
+       <ng-template let-sliderpopular pTemplate="item">
+
+         <div class="card product-item-content">
+          <img [defaultImage]="defaultImage" [lazyLoad]="sliderpopular.primeraimagen"  class="card-img-top" height="250" alt="..." />
+
+           <div class="card-body">
+            <a [routerLink]="['./detallelugar/',sliderpopular.idlugar]">
+              <h5 class="card-title text-left">{{sliderpopular.nombre}}</h5>
+            </a> 
+           
+             <p class="card-text text-justify">
+               {{ ((sliderpopular.descripcion|| '').toString().length > 200)? ((sliderpopular.descripcion|| '').toString() | slice:0:200)+'...':(sliderpopular.descripcion) }}
+             </p>
+             <p class="text-left">
+               <p-rating [(ngModel)]="sliderpopular.rating" [readonly]="true" [cancel]="false"></p-rating>
+             </p>
+             <h5 class="text-left"><i class="fa fa-heart fa-lg" style="color:red;"></i> ({{sliderpopular.love}}) <i
+                 class="fa fa-comments fa-lg" style="color: #0e64ea;"></i> ({{sliderpopular.comentario}})</h5>
+           </div>
+         </div>
+
+       </ng-template>
+     </p-carousel>
+
+   </div>
+
+
+   <div class="container">
+     <h3><strong>Las mejores rutas</strong></h3>
+     <div class="row">
+       <div class="col-sm-3" *ngFor="let item of rutas">
+         <div class="imagebox">
+           <a [routerLink]="['./detalleruta/',item.idruta]">
+             <img [src]="item.imagen" class="category-banner img-responsive" style="height: 300px;">
+             <span class="imagebox-desc">
+               <h3 style="color: white;">{{item.nombre}}</h3>
+             </span>
+           </a>
+         </div>
+       </div>
+
+     </div>
+   </div>
+   <br><br>
+   <div class="container" align="center">
+     <div class="row" align="center">
+       <h3 class="text-center "><strong>Recomendados</strong></h3>
+     </div>
+   </div>
+   <div class="container" align="center">
+
+     <div class="card text-white col-sm-6" *ngFor="let item of rutasvisibles">
+       <img [src]="item.imagen" class="card-img" alt="...">
+       <div class="card-img-overlay">
+         <h1 class="text-white  text-uppercase">{{item.slogan}}</h1>
+         <h4 class="card-text text-white">{{item.subtituloslogan}}</h4>
+
+         <p class="card-text"><a href="" class="btn waves-effect waves-light btn-rounded btn-success">Leer Guia</a></p>
+       </div>
+     </div>
+   </div>

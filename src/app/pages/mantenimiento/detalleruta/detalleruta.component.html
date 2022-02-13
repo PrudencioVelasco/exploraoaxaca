@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-xlg-12 col-xs-12">
+      <div class="message-box contact-box">
+        <div class="message-widget contact-widget">
+          <div *ngFor="let item of lugaresRuta">
+            <a [routerLink]="['../../detallelugar/',item.idlugar]">
+              <div class="user-img">
+                <h2>{{item.numero}}</h2>
+              </div>
+              <div class="mail-contnet">
+                <h5>{{item.nombre}}</h5>
+                <p class="text-justify" style="color: black;">
+                  {{ (item.descripcion?.toString()?.length)? (item.descripcion?.toString()| slice:0:100)+'..':(item.descripcion) }}
+                </p>
+
+                <span style="margin: 5px;" class="badge badge-info"
+                  *ngFor="let item of hack(item.actividades)">{{item.nombreactividad}}</span>
+
+
+
+
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xlg-12 col-xs-12">
+      <h3>Mapa</h3>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+:host ::ng-deep .p-chip.custom-chip {
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+}
+.note-text {
+    font-size: 14px;
+    line-height: 14px;
+    height: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }
+ 
+ .show-less {
+    height: 4rem;
+    overflow: hidden;
+    padding: 1rem;
+}
+.subrayado{
+    text-decoration: none;
+}

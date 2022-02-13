@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  mapBoxToken: 'pk.eyJ1IjoiZHVndWVyIiwiYSI6ImNrd3pjamNsNjAzeDMydm1wMjVrd2V0anQifQ.m5-t_sTN2mIhwKQ7R4wPdA',
+  base_url:'http://192.168.255.27:3000/monarca'
 };
 
 /*

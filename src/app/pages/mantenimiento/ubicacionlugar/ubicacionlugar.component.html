@@ -1,0 +1,140 @@
+
+
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body p-b-0">
+                <h4 class="card-title"> {{lugar?.nombre}}</h4>
+                <h6 class="card-subtitle">
+                    <ang-readmore class="text-justify" style="margin-bottom: 2rem;white-space:pre-wrap;"
+                    [text]="lugar?.descripcion!.toString()" [length]="400" linkColor="#26A69A">
+                  </ang-readmore>
+                </h6> </div>  
+        </div>
+    </div>
+</div>
+</div>
+<hr>
+<div class="container" >
+ 
+<div class="row">
+
+  <!-- Column -->
+  <div class="col-lg-3 col-md-6">
+      <div class="card" [ngClass]="{'active': visibleubicacion }"  (click)="mostrarUbicacion()" >
+         <div class="card-body cursor"   >
+              <div class="d-flex flex-row"  >
+                  <div class="align-self-center"   >
+                    <i class="mdi mdi-google-maps mdi-36px"  [ngClass]="{'coloriconoactivo': visibleubicacion }"></i></div>
+                  <div class="m-l-10 align-self-center" >
+                      <h4 class="m-b-0"  [ngClass]="{'coloriconoactivo': visibleubicacion }">Ubicación</h4> 
+                    </div>
+              </div>
+          </div> 
+      </div>
+  </div>
+  <!-- Column -->
+  <!-- Column -->
+  <div class="col-lg-3 col-md-6">
+      <div class="card"  [ngClass]="{'active': visiblehotel }" (click)="mostrarHotel()"> 
+          <div class="card-body cursor">
+              <div class="d-flex flex-row">
+                  <div class=" align-self-center">
+                    <i class="mdi mdi-hotel mdi-36px" [ngClass]="{'coloriconoactivo': visiblehotel }"></i>
+                  </div>
+                  <div class="m-l-10 align-self-center">
+                      <h4 class="m-b-0" [ngClass]="{'coloriconoactivo': visiblehotel }">Hoteles</h4> </div>
+              </div>
+          </div> 
+      </div>
+  </div> 
+  <div class="col-lg-3">
+    <div class="card" [ngClass]="{'active': visiblerestaurante }" (click)="mostrarRestaurante()">
+      <a  class="subrayado"  >
+        <div class="card-body cursor">
+            <div class="d-flex flex-row">
+                <div class="align-self-center"><i class="mdi mdi-silverware mdi-36px"  [ngClass]="{'coloriconoactivo': visiblerestaurante }"></i></div>
+                <div class="m-l-10 align-self-center">
+                    <h4 class="m-b-0"  [ngClass]="{'coloriconoactivo': visiblerestaurante }">Restaurantes</h4> </div>
+            </div>
+        </div>
+      </a>
+    </div>
+</div> 
+</div> 
+</div>
+
+<div class="container" [hidden]="!visibleubicacion">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+    <div id="map" class="gmaps" style="width: 100%; height: 300px;"> </div>
+  </div>
+  </div>
+</div>
+<div class="container" [hidden]="!visiblehotel">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12"> 
+      <div id="mapa_hoteles" class="gmaps" style="width: 100%; height: 300px;"> </div>
+  </div>
+  </div>
+</div>
+<div class="container" [hidden]="!visiblerestaurante">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12"> 
+       <div id="mapa_restaurantes" class="gmaps" style="width: 100%; height: 300px;"> </div>
+  </div>
+  </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+       
+        <h5 class="card-title">Comentarios</h5>
+       <div  align="center" >
+        <i class="text-center"  *ngIf="comentariosLugar.length == 0" class="mdi mdi-comment-multiple-outline mdi-48px"></i>
+
+       </div>
+       
+        <div *ngIf="comentariosLugar.length == 0" align="center">Sin comentarios</div>
+        <div *ngIf="comentariosLugar.length >0">
+          <div class="profiletimeline"
+            *ngFor="let comentario of comentariosLugar|paginate:{itemsPerPage:10,currentPage:page}">
+            <div class="sl-item">
+              <div class="sl-left">
+                <img *ngIf="comentario.imageUrl !=''" [src]="comentario.imageUrl" alt="user" class="img-circle">
+                <img *ngIf="comentario.imageUrl ==''" src="./assets/images/users/1.jpg" alt="user" class="img-circle">
+
+              </div>
+              <div class="sl-right">
+                <div><a href="#" class="link">{{comentario.userName}} </a> <span class="sl-date">
+                    {{comentario.fecha}}</span>
+                  <p>{{comentario.comentario}}</p>
+                  <div *ngIf="comentario.imagenes != null">
+                    <div class="row">
+                      <div class="col-lg-3 col-md-6 m-b-20"
+                        *ngFor="let item of conertir_imagen_comentario(comentario.imagenes)"><img
+                          [src]="item.imagenurl" class="img-responsive radius" /></div>
+                    </div>
+
+                  </div>
+                  <div class="like-comm">
+                    <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-star" style="color: yellow;"></i>
+                      {{comentario.rating}}</a> --
+                    <a href="javascript:void(0)" class="link m-r-10">{{comentario.nombre}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="text-center">
+            <pagination-controls (pageChange)="onTableDataChange($event)" previousLabel="Anterior"
+              nextLabel="Siguiente"></pagination-controls>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

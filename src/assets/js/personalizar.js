@@ -1,0 +1,1 @@
+$('.uploadfileadmin').modal({backdrop: 'static', keyboard: false})
