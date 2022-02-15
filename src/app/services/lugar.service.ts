@@ -24,12 +24,20 @@ export class LugarService {
     const url = `${base_url}/sitiosinteres/obtenerSitiosInteresPorLugarv2`;
     return this.http.post<{success:Boolean, data: SitiosInteres[] }>(url,data);
   }
+  buscarCosasQueHacer(data:{valor:String}) {
+    const url = `${base_url}/lugar/buscarLugaresActivos`;
+    return this.http.post<{success:Boolean, data: Lugar[] }>(url,data);
+  }
   obtenerSliderPrincipal() {
     const url = `${base_url}/lugar/sliderPrincipal`;
     return this.http.get<{ data: Lugar[] }>(url);
   } 
   obtenerSliderPolulares() {
     const url = `${base_url}/lugar/sliderLugaresTops`;
+    return this.http.get<{ data: Lugar[] }>(url);
+  } 
+  obtenerLugaresRecomendados() {
+    const url = `${base_url}/lugar/lugaresDentroSliders`;
     return this.http.get<{ data: Lugar[] }>(url);
   } 
   obtenerImagenesLugar(data:{idlugar:Number}) {

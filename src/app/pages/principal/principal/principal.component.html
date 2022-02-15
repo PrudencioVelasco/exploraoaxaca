@@ -1,23 +1,23 @@
- <div class="row">
+ <div class="row" align="center">
    <!-- Column -->
-   <div class="col-lg-3 col-md-6">
-     <a href="" class="subrayado-hover">
+   <div class="col-lg-4 col-md-6"></div>
+   <div class="col-lg-4 col-md-6">
+     <a   [routerLink]="['./cosasquehacer/']" class="subrayado-hover">
        <div class="card" style="border: solid #ccc 1px;">
          <div class="d-flex flex-row">
            <div class="p-10 bg-info">
-             <h3 class="text-white box m-b-0"><i class="ti-wallet"></i></h3>
+             <h3 class="text-white box m-b-0"><i class="fa fa-search"></i></h3>
            </div>
            <div class="align-self-center m-l-20">
-             <h4 class="m-b-0 text-info">Cosas que hacer</h4>
+             <h4 class="m-b-0 text-info">Buscar cosas que hacer</h4>
            </div>
          </div>
        </div>
      </a>
    </div>
-   <!-- Column -->
-   <!-- Column -->
-   <div class="col-lg-3 col-md-6">
-     <a href="" class="subrayado-hover">
+   <div class="col-lg-4 col-md-6"></div> 
+  <!-- <div class="col-lg-3 col-md-6">
+    <a   [routerLink]="['./categoria/']" class="subrayado-hover">
        <div class="card" style="border: solid #ccc 1px;">
          <div class="d-flex flex-row">
            <div class="p-10 bg-success">
@@ -29,11 +29,9 @@
          </div>
        </div>
      </a>
-   </div>
-   <!-- Column -->
-   <!-- Column -->
+   </div> 
    <div class="col-lg-3 col-md-6">
-     <a href="" class="subrayado-hover">
+    <a   [routerLink]="['./tours/']" class="subrayado-hover">
        <div class="card" style="border: solid #ccc 1px;">
          <div class="d-flex flex-row">
            <div class="p-10 bg-inverse">
@@ -45,11 +43,9 @@
          </div>
        </div>
      </a>
-   </div>
-   <!-- Column -->
-   <!-- Column -->
+   </div> 
    <div class="col-lg-3 col-md-6">
-     <a href="" class="subrayado-hover">
+    <a   [routerLink]="['./categoria/']" class="subrayado-hover">
        <div class="card" style="border: solid #ccc 1px;">
          <div class="d-flex flex-row">
            <div class="p-10 bg-primary">
@@ -60,16 +56,15 @@
            </div>
          </div>
        </div>
-     </a>
-     <!-- Column -->
-   </div>
+     </a> 
+   </div>-->
    <hr>
 
 
 
 
 
-   <div class="row" style="background-color: #eae7e7;">
+   <div class="row" style="background-color: #8aa5fc;">
      <p-carousel [value]="slidersprincipal" *ngIf="!cargando_principal" [numVisible]="3" [numScroll]="3" [showIndicators]="false" [circular]="false"
        [responsiveOptions]="responsiveOptions">
 
@@ -199,7 +194,7 @@
          <h1 class="text-white  text-uppercase">{{item.slogan}}</h1>
          <h4 class="card-text text-white">{{item.subtituloslogan}}</h4>
 
-         <p class="card-text"><a href="" class="btn waves-effect waves-light btn-rounded btn-success">Leer Guia</a></p>
+         <p class="card-text">  <a [routerLink]="['./detalleruta/',item.idruta]" class="btn waves-effect waves-light btn-rounded btn-success">Leer Guia</a></p>
        </div>
      </div>
    </div>

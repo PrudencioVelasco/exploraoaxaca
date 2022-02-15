@@ -1,171 +1,166 @@
- <div class="container">
-   <div class="row">
-     <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
-       <h1>{{lugar?.nombre}}</h1>
-       <h6>{{lugar?.direccion}}</h6>
-     </div>
-   </div>
-   <div class="row">
-     <div class="col-lg-6 col-md-6 col-xlg-6 col-xs-6">
-       <div class="row">
-         <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
-           <ngb-rating style="font-size: 40px;" [max]="5" (rate)="lugar.rating" [readonly]="true"></ngb-rating>
-           <i class="mdi mdi-heart mdi-24px" style="color:red;"></i> ({{lugar?.love}})
-           <i class="mdi mdi-comment-multiple-outline mdi-24px" style="color: #0e64ea;"></i> ({{lugar?.comentario}})
-         </div>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+      <h1>{{lugar?.nombre}}</h1>
+      <h6>{{lugar?.direccion}}</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-xlg-6 col-xs-6" >
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+          <ngb-rating style="font-size: 40px;" [max]="5" (rate)="lugar.rating" [readonly]="true"></ngb-rating>
+          <i class="mdi mdi-heart mdi-24px" style="color:red;"></i> ({{lugar?.love}})
+          <i class="mdi mdi-comment-multiple-outline mdi-24px" style="color: #0e64ea;"></i> ({{lugar?.comentario}})
+        </div>
 
-       </div>
-       <div class="row">
-         <div class="col-lg-6">
-           <a class="subrayado" [routerLink]="['../../ubicacionlugar/',lugar?.idlugar,'ubicacion']">
-           <div class="card">
-             <div class="card-body" style="border: solid #ccc 1px; border-radius: 5px;">
-               <div class="d-flex no-block">
-                 <div class="m-r-20 align-self-center">
-                   <span class="lstick m-r-20"></span>
-                   <i class="mdi mdi-google-maps mdi-48px"></i>
-                 </div>
-                 <div class="align-self-center">
-                   <h6 class="text-muted m-t-10 m-b-0">Ubicación</h6>
-                 </div>
-               </div>
-             </div>
-           </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <a class="subrayado" [routerLink]="['../../ubicacionlugar/',lugar?.idlugar,'ubicacion']">
+            <div class="card">
+              <div class="card-body" style="border: solid #ccc 1px; border-radius: 5px;">
+                <div class="d-flex no-block">
+                  <div class="m-r-20 align-self-center">
+                    <span class="lstick m-r-20"></span>
+                    <i class="mdi mdi-google-maps mdi-48px"></i>
+                  </div>
+                  <div class="align-self-center">
+                    <h6 class="text-muted m-t-10 m-b-0">Ubicación</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
           </a>
-         </div>
-         <div class="col-lg-6">
+        </div>
+        <div class="col-lg-6">
           <a class="subrayado" [routerLink]="['../../ubicacionlugar/',lugar?.idlugar,'hotel']">
-           <div class="card">
-             <div class="card-body" style="border: solid #ccc 1px; border-radius: 5px;">
-               <div class="d-flex no-block">
-                 <div class="m-r-20 align-self-center">
-                   <span class="lstick m-r-20"></span>
-                   <i class="mdi mdi-hotel mdi-48px"></i>
-                 </div>
-                 <div class="align-self-center">
-                   <h6 class="text-muted m-t-10 m-b-0">Hotel</h6>
-                 </div>
-               </div>
-             </div>
-           </div>
+            <div class="card">
+              <div class="card-body" style="border: solid #ccc 1px; border-radius: 5px;">
+                <div class="d-flex no-block">
+                  <div class="m-r-20 align-self-center">
+                    <span class="lstick m-r-20"></span>
+                    <i class="mdi mdi-hotel mdi-48px"></i>
+                  </div>
+                  <div class="align-self-center">
+                    <h6 class="text-muted m-t-10 m-b-0">Hotel</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
           </a>
-         </div>
+        </div>
 
-       </div>
-       <div class="row">
-         <div class="col-lg-6">
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
           <a class="subrayado" [routerLink]="['../../ubicacionlugar/',lugar?.idlugar,'restaurante']">
-           <div class="card">
-             <div class="card-body" style="border: solid #ccc 1px; border-radius: 5px;">
-               <div class="d-flex no-block">
-                 <div class="m-r-20 align-self-center">
-                   <span class="lstick m-r-20"></span>
-                   <i class="mdi mdi-silverware mdi-48px"></i>
-                 </div>
-                 <div class="align-self-center">
-                   <h6 class="text-muted m-t-10 m-b-0">Restaurantes</h6>
-                 </div>
-               </div>
-             </div>
-           </div>
+            <div class="card">
+              <div class="card-body" style="border: solid #ccc 1px; border-radius: 5px;">
+                <div class="d-flex no-block">
+                  <div class="m-r-20 align-self-center">
+                    <span class="lstick m-r-20"></span>
+                    <i class="mdi mdi-silverware mdi-48px"></i>
+                  </div>
+                  <div class="align-self-center">
+                    <h6 class="text-muted m-t-10 m-b-0">Restaurantes</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
           </a>
-         </div>
-        <!-- <div class="col-lg-6">
-           <div class="card">
-             <div class="card-body" style="border: solid #ccc 1px; border-radius: 5px;">
-               <div class="d-flex no-block">
-                 <div class="m-r-20 align-self-center">
-                   <span class="lstick m-r-20"></span>
-                   <i class="mdi mdi-comment-multiple-outline mdi-48px"></i>
-                 </div>
-                 <div class="align-self-center">
-                   <h6 class="text-muted m-t-10 m-b-0">Comentarios</h6>
-                 </div>
-               </div>
-             </div>
-           </div>
+        </div>
+      </div>
+    
+    </div>
+    <div class="col-lg-6 col-md-6 col-xlg-12 col-xs-12 global ">
+      <div class="row ">
+        <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12 " *ngIf="imagenesLugar.length > 0">
+          <p-image src="{{item.url}}" *ngFor="let item of imagenesLugar" alt="Image" width="250" [preview]="true">
+          </p-image>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12 " *ngIf="imagenesLugar.length == 0">
+<h6 class="text-center">No hay imagenes en la galeria</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+        <h4 class="card-title">Descripción</h4>
+        <ang-readmore class="text-justify" style="margin-bottom: 2rem;white-space:pre-wrap;"
+          [text]="lugar?.descripcion!.toString()" [length]="400" linkColor="#26A69A">
+        </ang-readmore>
 
-         </div>-->
-       </div>
-       <div class="col-lg-6 col-md-6 col-xlg-6 col-xs-6">
+        <p-chip label="{{item.nombreactividad}}" icon="pi pi-check" *ngFor="let item of hack(lugar.actividades)"
+          styleClass="mr-4 custom-chip"></p-chip>
 
-       </div>
-     </div>
-   </div>
-   <div class="container">
-     <div class="row">
-       <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
-         <h4 class="card-title">Descripción</h4>
-         <ang-readmore class="text-justify" style="margin-bottom: 2rem;white-space:pre-wrap;"
-           [text]="lugar?.descripcion!.toString()" [length]="400" linkColor="#26A69A">
-         </ang-readmore>
-         <div>
-           <p-chip label="{{item.nombreactividad}}" icon="pi pi-check" *ngFor="let item of hack(lugar.actividades)"
-             styleClass="mr-4 custom-chip"></p-chip>
-         </div>
-       </div>
-     </div>
-   </div>
-   <br>
-   <div class="container" *ngIf="sitiosInteresLugar.length > 0">
-     <div class="row">
-       <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
-         <h4 class="card-title">Sitios de Interes</h4>
-         <div *ngFor="let item of sitiosInteresLugar">
-           <ang-readmore class="text-justify" style="margin-bottom: 2rem;white-space:pre-wrap;"
-             [text]="item.descripcion.toString()" [length]="400" linkColor="#26A69A">
-           </ang-readmore>
-         </div>
-       </div>
-     </div>
-   </div>
-   <br>
-   <div class="container">
-     <div class="row">
-       <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
-         <h5 class="card-title">Comentarios</h5>
-         <div  align="center" >
-          <i class="text-center"  *ngIf="comentariosLugar.length == 0" class="mdi mdi-comment-multiple-outline mdi-48px"></i>
-  
-         </div>
-         <div *ngIf="comentariosLugar.length == 0" align="center">Sin comentarios</div>
-         <div *ngIf="comentariosLugar.length >0">
-           <div class="profiletimeline"
-             *ngFor="let comentario of comentariosLugar|paginate:{itemsPerPage:10,currentPage:page}">
-             <div class="sl-item">
-               <div class="sl-left">
-                 <img *ngIf="comentario.imageUrl !=''" [src]="comentario.imageUrl" alt="user" class="img-circle">
-                 <img *ngIf="comentario.imageUrl ==''" src="./assets/images/users/1.jpg" alt="user" class="img-circle">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container" *ngIf="sitiosInteresLugar.length > 0">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+        <h4 class="card-title">Sitios de Interes</h4>
+        <div *ngFor="let item of sitiosInteresLugar">
+          <ang-readmore class="text-justify" style="margin-bottom: 2rem;white-space:pre-wrap;"
+            [text]="item.descripcion.toString()" [length]="400" linkColor="#26A69A">
+          </ang-readmore>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+        <h5 class="card-title">Comentarios</h5>
+        <div align="center">
+          <i class="text-center" *ngIf="comentariosLugar.length == 0"
+            class="mdi mdi-comment-multiple-outline mdi-48px"></i>
 
-               </div>
-               <div class="sl-right">
-                 <div><a href="#" class="link">{{comentario.userName}} </a> <span class="sl-date">
-                     {{comentario.fecha}}</span>
-                   <p>{{comentario.comentario}}</p>
-                   <div *ngIf="comentario.imagenes != null">
-                     <div class="row">
-                       <div class="col-lg-3 col-md-6 m-b-20"
-                         *ngFor="let item of conertir_imagen_comentario(comentario.imagenes)"><img
-                           [src]="item.imagenurl" class="img-responsive radius" /></div>
-                     </div>
+        </div>
+        <div *ngIf="comentariosLugar.length == 0" align="center">Sin comentarios</div>
+        <div *ngIf="comentariosLugar.length >0">
+          <div class="profiletimeline"
+            *ngFor="let comentario of comentariosLugar|paginate:{itemsPerPage:10,currentPage:page}">
+            <div class="sl-item">
+              <div class="sl-left">
+                <img *ngIf="comentario.imageUrl !=''" [src]="comentario.imageUrl" alt="user" class="img-circle">
+                <img *ngIf="comentario.imageUrl ==''" src="./assets/images/users/1.jpg" alt="user" class="img-circle">
 
-                   </div>
-                   <div class="like-comm">
-                     <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-star" style="color: yellow;"></i>
-                       {{comentario.rating}}</a> --
-                     <a href="javascript:void(0)" class="link m-r-10">{{comentario.nombre}}</a>
-                   </div>
-                 </div>
-               </div>
-             </div>
-             <hr>
-           </div>
-           <div class="text-center">
-             <pagination-controls (pageChange)="onTableDataChange($event)" previousLabel="Anterior"
-               nextLabel="Siguiente"></pagination-controls>
-           </div>
-         </div>
+              </div>
+              <div class="sl-right">
+                <div><a href="#" class="link">{{comentario.userName}} </a> <span class="sl-date">
+                    {{comentario.fecha}}</span>
+                  <p>{{comentario.comentario}}</p>
+                  <div *ngIf="comentario.imagenes != null">
+                    <div class="row">
+                      <div class="col-lg-3 col-md-6 m-b-20"
+                        *ngFor="let item of conertir_imagen_comentario(comentario.imagenes)"><img [src]="item.imagenurl"
+                          class="img-responsive radius" /></div>
+                    </div>
 
-       </div>
-     </div>
-   </div>
+                  </div>
+                  <div class="like-comm">
+                    <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-star" style="color: yellow;"></i>
+                      {{comentario.rating}}</a> --
+                    <a href="javascript:void(0)" class="link m-r-10">{{comentario.nombre}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="text-center">
+            <pagination-controls (pageChange)="onTableDataChange($event)" previousLabel="Anterior"
+              nextLabel="Siguiente"></pagination-controls>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

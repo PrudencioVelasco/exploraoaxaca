@@ -1,6 +1,7 @@
 :host ::ng-deep .p-chip.custom-chip {
     background: var(--primary-color);
     color: var(--primary-color-text);
+    margin-bottom: 10px;
 }
 .note-text {
     font-size: 14px;
@@ -17,4 +18,18 @@
 }
 .subrayado{
     text-decoration: none;
+}
+.card-img-top {
+    flex-grow: 1;
+    object-fit:contain;
+}
+.card-body{
+    flex-grow:0;
+}
+.global {
+	height: 300px;
+	width: 100%;
+	border: 1px solid #ddd;
+	background: #f1f1f1;
+	overflow-y: scroll;
 }

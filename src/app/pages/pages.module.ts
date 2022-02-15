@@ -11,8 +11,7 @@ import { PrincipalComponent } from './principal/principal/principal.component';
 import {CarouselModule} from 'primeng/carousel';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
-import {TabViewModule} from 'primeng/tabview'; 
-import {ImageModule} from 'primeng/image';
+import {TabViewModule} from 'primeng/tabview';  
 import {RatingModule} from 'primeng/rating';
 import {GalleriaModule} from 'primeng/galleria'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,11 +24,17 @@ import { UbicacionlugarComponent } from './mantenimiento/ubicacionlugar/ubicacio
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { DetallerutaComponent } from './mantenimiento/detalleruta/detalleruta.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { CosasquehacerComponent } from './buscar/cosasquehacer/cosasquehacer.component';
+import { CategoriaComponent } from './buscar/categoria/categoria.component';
+import { ToursComponent } from './buscar/tours/tours.component';
+import { AvisoprivacidadComponent } from './mantenimiento/avisoprivacidad/avisoprivacidad.component'; 
+import {ImageModule} from 'primeng/image';
+
 @NgModule({
   declarations: [
     DashboardComponent, 
     PagesComponent, 
-    PrincipalComponent, DetallelugarComponent, UbicacionlugarComponent, DetallerutaComponent,  
+    PrincipalComponent, DetallelugarComponent, UbicacionlugarComponent, DetallerutaComponent, CosasquehacerComponent, CategoriaComponent, ToursComponent, AvisoprivacidadComponent,  
   
   ],
   exports: [
@@ -56,7 +61,9 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     NgxPaginationModule, 
     SkeletonModule,
     NgxMapboxGLModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    ImageModule,
+    
   ]
 })
 export class PagesModule { }

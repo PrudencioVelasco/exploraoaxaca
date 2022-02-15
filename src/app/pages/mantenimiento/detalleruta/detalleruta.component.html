@@ -1,35 +1,39 @@
 <div class="container">
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+    <h2>{{detalleRuta?.nombre}}</h2>
+    <p class="text-justify">
+      {{detalleRuta?.descripcion}}
+    </p>
+  </div>
+</div>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-xlg-12 col-xs-12">
-      <div class="message-box contact-box">
-        <div class="message-widget contact-widget">
-          <div *ngFor="let item of lugaresRuta">
-            <a [routerLink]="['../../detallelugar/',item.idlugar]">
-              <div class="user-img">
-                <h2>{{item.numero}}</h2>
-              </div>
-              <div class="mail-contnet">
-                <h5>{{item.nombre}}</h5>
-                <p class="text-justify" style="color: black;">
-                  {{ (item.descripcion?.toString()?.length)? (item.descripcion?.toString()| slice:0:100)+'..':(item.descripcion) }}
-                </p>
-
-                <span style="margin: 5px;" class="badge badge-info"
-                  *ngFor="let item of hack(item.actividades)">{{item.nombreactividad}}</span>
-
-
-
-
-              </div>
-            </a>
-
+      <ul class="list-unstyled" *ngFor="let item of lugaresRuta">
+        <li class="media">
+          <h2 class="d-flex mr-3">{{item.numero}}</h2>
+          <div class="media-body">
+            <h5 class="mt-0 mb-1"> <a [routerLink]="['../../detallelugar/',item.idlugar]"> {{item.nombre}}</a></h5>
+            {{ (item.descripcion?.toString()?.length)? (item.descripcion?.toString()| slice:0:150)+'..':(item.descripcion) }}
+            <div>
+              <span style="margin: 5px;" class="badge badge-info"
+                *ngFor="let item of hack(item.actividades)">{{item.nombreactividad}}</span>
+              <br>
+              <img *ngIf="item.primeraimagen" [defaultImage]="defaultImage" [lazyLoad]="item.primeraimagen.toString()"
+                height="250" width="100%" alt="..." />
+            </div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
     <div class="col-lg-6 col-md-6 col-xlg-12 col-xs-12">
-      <h3>Mapa</h3>
-
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-xlg-12 col-xs-12">
+          <div id="map_ruta" class="gmaps" style="width: 100%; height:400px;"> </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

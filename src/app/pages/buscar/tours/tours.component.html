@@ -1,0 +1,27 @@
+<div class="form-body">
+    <h3 class="card-title">Buscar Tours</h3>
+    <hr>
+    <div class="row p-t-20">
+      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="controls">
+            <div class="input-group">
+              <input type="text" class="form-control" [(ngModel)]='valor_buscar'
+                placeholder="Busque lugares turisticos o actividades" required> 
+                <div class="form-group"> 
+                    <select class="form-control"> 
+                        <option>India</option>
+                        <option>Sri Lanka</option>
+                        <option>USA</option>
+                    </select>
+                </div>
+                <span class="input-group-btn">
+                <button class="btn btn-info" type="button" (click)="btnBuscar()">Buscar</button>
+              </span> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

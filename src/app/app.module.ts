@@ -11,8 +11,7 @@ import { NopagefoundComponent } from './pages/nopagefound/nopagefound/nopagefoun
 import { HttpClientModule } from '@angular/common/http';
  
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PagesModule, 
     HttpClientModule ,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule, 
   ],
   bootstrap: [AppComponent]
 })
